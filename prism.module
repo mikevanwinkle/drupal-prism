@@ -1,0 +1,23 @@
+<?php
+/**
+ * Core integrations
+ * @file
+ * User: @wink
+ * Date: 10/30/2014
+ * Time: 8:15 PM PDT
+ */
+
+function prism_node_info() {
+	return array(
+		'prism' => array(
+			'name' => t('Prism'),
+			'base' => 'prism',
+			'description' => t('Adds Prism code highlighter'),
+		)
+	);
+}
+
+function prism_init() {
+	drupal_add_js(drupal_get_path('module','prism').'/files/prism.js', array('type'=>'file','preprocess'=>TRUE));
+	drupal_add_css(drupal_get_path('module','prism').'/files/prism.css', array('type'=>'file','preprocess'=>TRUE));
+}
